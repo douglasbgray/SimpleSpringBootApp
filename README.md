@@ -24,12 +24,11 @@ Open file in your browser: `${project_home}/target/site/jacoco/index.html`
 
 ------------
 
-#### Post
+#### POST
 
 `http://{host}:{port}/sample/v1/person`
 
 **Header:**
-
 ```
 Content-Type: application/json
 ```
