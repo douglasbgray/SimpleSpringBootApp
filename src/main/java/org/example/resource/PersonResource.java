@@ -14,9 +14,7 @@ public class PersonResource {
   @GET
   @Produces("application/json")
   public Response getRandomPerson() {
-    Person person = new Person();
-    person.setFirstName("Random");
-    person.setLastName("Person");
+    Person person = new Person("Random", "Person");
     return Response.status(Response.Status.OK).entity(person).build();
   }
 
