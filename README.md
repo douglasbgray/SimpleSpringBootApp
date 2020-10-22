@@ -22,6 +22,8 @@ Open file in your browser: `${project_home}/target/site/jacoco/index.html`
 {"firstName": "Random", "lastName": "Person"}
 ```
 
+------------
+
 #### Post
 
 `http://{host}:{port}/sample/v1/person`
