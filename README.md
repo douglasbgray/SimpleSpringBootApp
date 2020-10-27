@@ -23,6 +23,16 @@ docker run -it -p8080:8080 simple-spring-boot-app:latest
 
 Then access http://localhost:8080/sample/v1/person to verify working.
 
+## Pushing to Docker Hub
+
+Follow these instructions - https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
+
+```
+docker login --username=douglasbgray
+docker images
+docker tag <image_id> douglasbgray/simple-spring-boot-app:firsttry
+docker push douglasbgray/simple-spring-boot-app
+```
 ## Operations
 
 #### GET
