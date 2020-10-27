@@ -11,6 +11,18 @@ Run this command: `mvn clean verify`
 
 Open file in your browser: `${project_home}/target/site/jacoco/index.html`
 
+## Dockerizing
+
+Run these commands (assuming you have Docker installed) 
+
+```
+mvn clean package
+docker build -t simple-spring-boot-app:latest .
+docker run -it -p8080:8080 simple-spring-boot-app:latest
+```
+
+Then access http://localhost:8080/sample/v1/person to verify working.
+
 ## Operations
 
 #### GET
