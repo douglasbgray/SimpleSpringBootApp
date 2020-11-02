@@ -46,7 +46,7 @@ docker push douglasbgray/simple-spring-boot-app
 
 ------------
 
-#### POST
+#### POST or PUT
 
 `http://{host}:{port}/sample/v1/person`
 
