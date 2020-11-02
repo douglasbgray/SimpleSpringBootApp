@@ -26,4 +26,12 @@ public class PersonResource {
     return Response.status(Response.Status.OK).entity(personResponse).build();
   }
 
+  @PUT
+  @Produces("application/json")
+  @Consumes("application/json")
+  public Response replacePerson(Person person) {
+    PersonResponse personResponse = new PersonResponse(person);
+    return Response.status(Response.Status.OK).entity(personResponse).build();
+  }
+
 }

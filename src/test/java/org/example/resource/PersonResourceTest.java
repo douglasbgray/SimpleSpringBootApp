@@ -34,4 +34,16 @@ public class PersonResourceTest {
     assertEquals(expected, response.getEntity());
   }
 
+  @Test
+  public void testReplacePerson() {
+    Person body = new Person("Bob", "Smith");
+    Response response = new PersonResource().replacePerson(body);
+
+    PersonResponse expected = new PersonResponse(body);
+
+    assertNotNull(response);
+    assertEquals(200, response.getStatus());
+    assertEquals(expected, response.getEntity());
+  }
+
 }
