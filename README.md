@@ -7,7 +7,9 @@
 
 ## Running Tests
 
-Run this command: `mvn clean verify`
+* Unit tests: `mvn clean test`
+* Integration tests: `mvn clean verify` (runs local spring boot on random port)
+* Integration tests: `mvn clean verify -DitEndpoint=http://localhost:8080` (choose the end point as appropriate)
 
 Open file in your browser: `${project_home}/target/site/jacoco/index.html`
 
