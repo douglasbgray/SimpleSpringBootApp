@@ -29,14 +29,22 @@ public class ResourceTestsIT {
   @LocalServerPort
   int randomServerPort;
 
-  String itEndpoint;
-  ObjectMapper objectMapper = new ObjectMapper();
+  private String itEndpoint;
+  private Boolean simulateFailure = false;
+
+  private ObjectMapper objectMapper = new ObjectMapper();
 
   @Before
   public void setUp() {
     String itEndpointFromSystem = System.getProperty("itEndpoint");
     itEndpoint = StringUtils.isNotBlank(itEndpointFromSystem) ? itEndpointFromSystem : "http://localhost:" + randomServerPort;
     System.out.println("+++ IT Endpoint = " + itEndpoint);
+
+    String simulateFailureFromSystem = System.getProperty("simulateFailure");
+    if (StringUtils.isNotBlank(simulateFailureFromSystem)) {
+      simulateFailure = simulateFailureFromSystem.equalsIgnoreCase("true");
+    }
+    System.out.println("+++ Simulate Failure = " + simulateFailure);
   }
 
   @Test
@@ -77,6 +85,13 @@ public class ResourceTestsIT {
 
       assertEquals(200, response.getStatusLine().getStatusCode());
       assertEquals("Received person: Sally Smith", personResponse.getMessage());
+    }
+  }
+
+  @Test
+  public void simulatedFailureTest() {
+    if (simulateFailure) {
+      throw new IllegalArgumentException("Simulating a test failure.");
     }
   }
 

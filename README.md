@@ -10,6 +10,7 @@
 * Unit tests: `mvn clean test`
 * Integration tests: `mvn clean verify` (runs local spring boot on random port)
 * Integration tests: `mvn clean verify -DitEndpoint=http://localhost:8080` (choose the end point as appropriate)
+* Integration tests: `mvn clean verify -DitEndpoint=http://localhost:8080 -DsimulateFailure=true` (will cause one of the IT tests to fail)
 
 Open file in your browser: `${project_home}/target/site/jacoco/index.html`
 
