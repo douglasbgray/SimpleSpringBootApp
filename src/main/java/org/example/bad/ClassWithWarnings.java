@@ -24,4 +24,11 @@ public class ClassWithWarnings {
     return Objects.equals(name, that.name);
   }
 
+  // Test for null using equals
+  public void nullEquals(Object x) {
+    if (x.equals(null)) {
+      throw new NullPointerException();
+    }
+  }
+
 }
